@@ -1,39 +1,103 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { useRouter } from 'next/router';
+import styles from '../../styles/Login.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faCheck } from '@fortawesome/free-solid-svg-icons';
+
+const loginSchema = Yup.object().shape({
+  username: Yup.string().required('Kullanıcı adı gerekli'),
+  password: Yup.string().required('Şifre gerekli'),
+});
 
 export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   const router = useRouter();
+  const [loginStatus, setLoginStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Giriş yapıldı:', username, password);
-    router.push('/homepage');
-  };
+
+  const formik = useFormik({
+    initialValues: {
+      username: '',
+      password: '',
+    },
+    validationSchema: loginSchema,
+    onSubmit: async (values) => {
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          setLoginStatus('success');
+          setTimeout(() => router.push('/home'), 2000);
+        } else {
+          setLoginStatus('fail');
+          setErrorMessage(data.message || 'Giriş başarısız');
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+        setLoginStatus('fail');
+        setErrorMessage('Sunucu hatası');
+      }
+    },
+  });
+  useEffect(() => {
+    let timer;
+    if (errorMessage) {
+      timer = setTimeout(() => setErrorMessage(''), 3000); 
+    }
+    return () => clearTimeout(timer); 
+  }, [errorMessage]);
+  
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Kullanıcı Adı:</label>
+    <div className={styles.loginForm}>
+      <div className={styles.legend}>Hoş Geldin</div>
+      <form onSubmit={formik.handleSubmit}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="username">Kullanıcı Adı</label>
           <input
-            type="text"
             id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="text"
+            {...formik.getFieldProps('username')}
           />
+          {formik.touched.username && formik.errors.username && (
+            <div className={styles.errorMessage}>
+              {formik.errors.username}
+            </div>
+          )}
         </div>
-        <div>
-          <label htmlFor="password">Şifre:</label>
+        <div className={styles.inputContainer}>
+          <label htmlFor="password">Şifre</label>
           <input
-            type="password"
             id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            {...formik.getFieldProps('password')}
           />
+          {formik.touched.password && formik.errors.password && (
+            <div className={styles.errorMessage}>
+              {formik.errors.password}
+            </div>
+          )}
         </div>
-        <button type="submit">Giriş Yap</button>
+        {loginStatus === 'fail' && (
+        <div className={`${styles.toastMessage} ${errorMessage ? styles.show : ''}`}>
+        {errorMessage}
+      </div>
+      )}
+        
+        <div className={styles.submitContainer}>
+          <button type="submit" className={`${styles.submitButton} ${loginStatus === 'success' ? styles.success : loginStatus === 'fail' ? styles.fail : ''}`}>
+            {loginStatus === 'success' ? <FontAwesomeIcon icon={faCheck} /> : loginStatus === 'fail' ? <FontAwesomeIcon icon={faArrowRight} /> : <FontAwesomeIcon icon={faArrowRight} />}
+          </button>
+        </div>
       </form>
     </div>
   );
