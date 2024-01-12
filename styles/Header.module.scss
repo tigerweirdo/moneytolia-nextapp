@@ -1,0 +1,55 @@
+.header {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.46);
+    backdrop-filter: blur(10px);
+    border-radius: 9px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+
+    .logo {
+        h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 0;
+        }
+    }
+
+    .logoutButton {
+        background-color: #353f55;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.5s, transform 1s ease;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.222);
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
