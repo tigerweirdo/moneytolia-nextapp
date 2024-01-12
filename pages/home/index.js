@@ -1,7 +1,8 @@
 import React from "react";
+import { withAuth } from '../../components/withAuth';
 
-const Index = () => {
+const HomePage = () => {
   return <div>Home Page</div>;
 };
 
-export default Index;
+export default withAuth(HomePage);

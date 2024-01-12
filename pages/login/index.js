@@ -16,6 +16,12 @@ export default function Login() {
   const [loginStatus, setLoginStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Oturum kontrolü
+  useEffect(() => {
+    if (checkUserLoggedIn()) {
+      router.push('/home');
+    }
+  }, [router]);
 
   const formik = useFormik({
     initialValues: {
@@ -35,6 +41,7 @@ export default function Login() {
 
         const data = await response.json();
         if (response.ok) {
+          localStorage.setItem('userToken', data.token); // Giriş başarılıysa token'ı saklayın
           setLoginStatus('success');
           setTimeout(() => router.push('/home'), 2000);
         } else {
@@ -48,14 +55,15 @@ export default function Login() {
       }
     },
   });
+
   useEffect(() => {
     let timer;
     if (errorMessage) {
-      timer = setTimeout(() => setErrorMessage(''), 3000); 
+      timer = setTimeout(() => setErrorMessage(''), 3000);
     }
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, [errorMessage]);
-  
+
 
   return (
     <div className={styles.loginForm}>
@@ -101,4 +109,7 @@ export default function Login() {
       </form>
     </div>
   );
+}
+function checkUserLoggedIn() {
+  return localStorage.getItem('userToken') !== null;
 }
