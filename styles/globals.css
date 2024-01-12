@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
-html,
-body {
+html, body {
   background-image: url('../public/hero-home.png');
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover; /* Görüntüyü kapsayacak şekilde genişletir */
+  background-repeat: no-repeat; /* Görüntünün tekrar etmesini önler */
   padding: 0;
   margin: 0;
- 
+
+  background-attachment: fixed;
+
 }
+
 
 * {
   box-sizing: border-box;

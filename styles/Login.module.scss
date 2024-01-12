@@ -1,16 +1,16 @@
 .loginForm {
   max-width: 350px;
-  margin: 150px auto;
+  margin:150px auto;
   padding: 2rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.46);
   animation: fadeIn 1s ease-in-out;
   font-family: 'Open Sans', sans-serif;
-  backdrop-filter: blur(10px) ;
+  backdrop-filter: blur(10px);
   border-radius: 9px;
 
 
   .legend {
-    background: #353f55; 
+    background: #353f55;
     color: white;
     padding: 15px;
     text-align: center;
@@ -18,16 +18,18 @@
     font-weight: 300;
     margin-bottom: 2rem;
     border-radius: 9px;
-  
 
-    
-    
+
+
+
   }
+
   .inputContainer {
     position: relative;
     margin-bottom: 2rem;
-    
-    label, input {
+
+    label,
+    input {
       width: 100%;
       margin-bottom: 10px;
     }
@@ -41,22 +43,23 @@
 
     .errorMessage {
       position: absolute;
-      top: 100%; 
+      top: 100%;
       left: 0;
-      background: #ffdddd; 
-      color: #d8000c; 
+      background: #ffdddd;
+      color: #d8000c;
       padding: 5px 10px;
       font-size: 0.75rem;
       border-radius: 4px;
       animation: shake 0.3s ease-in-out;
-      border: 1px solid #d8000c; 
+      border: 1px solid #d8000c;
       z-index: 10;
-    
+
       &.show {
         display: block;
       }
     }
   }
+
   .toastMessage {
     position: fixed;
     left: 50%;
@@ -71,24 +74,24 @@
     text-align: center;
     font-size: 0.9rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    visibility: hidden; 
+    visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s ease;
   }
-  
+
   .toastMessage.show {
     visibility: visible;
     opacity: 1;
   }
-  
-  
+
+
 
   .submitContainer {
     margin-top: 1.5rem;
     text-align: center;
 
     .submitButton {
-     
+
       border: none;
       border-radius: 50%;
       background-color: #353f55;
@@ -103,23 +106,40 @@
         background-color: rgba(0, 0, 0, 0.222);
       }
 
-  
+
       &.success {
-        background-color: #28a745; 
+        background-color: #28a745;
       }
     }
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateX(-10rem); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 @media (max-width: 600px) {
