@@ -1,8 +1,11 @@
 import React from "react";
-import { withAuth } from '../../components/withAuth';
+import { Auth } from '../../components/Auth';
+import Header from "@/components/Header";
 
 const HomePage = () => {
-  return <div>Home Page</div>;
+ 
+  return <div>
+     <Header/>Home Page</div>;
 };
 
-export default withAuth(HomePage);
+export default Auth(HomePage);
