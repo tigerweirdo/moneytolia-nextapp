@@ -2,43 +2,40 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.46);
-    backdrop-filter: blur(10px);
-    border-radius: 9px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     font-family: 'Open Sans', sans-serif;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
     animation: fadeIn 1s ease-in-out;
 
     .logo {
-        h1 {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin: 0;
-        }
+        margin-right: auto;
     }
 
     .logoutButton {
-        background-color: #353f55;
-        color: white;
+        margin-left: auto;
+        background-color: #f4433600;
+        color: #f44336;
         border: none;
-        padding: 10px 20px;
-        border-radius: 50%;
+        font-size: 1.3rem;
         cursor: pointer;
-        transition: background-color 0.5s, transform 1s ease;
+        transition: color 0.3s;
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.222);
+            color: #d32f2f;
+            transform: scale(1.02);
         }
+
     }
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateX(-10rem);
+        transform: translateX(-20px);
     }
 
     to {
@@ -50,6 +47,11 @@
 @media (max-width: 600px) {
     .header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+
+        .logoutButton {
+            margin-left: 0;
+            margin-top: 10px;
+        }
     }
 }
