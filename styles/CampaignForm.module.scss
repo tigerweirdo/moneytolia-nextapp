@@ -1,0 +1,117 @@
+.campaignForm {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: #f9f9f9fc; // Hafif saydamlık ekleyerek derinlik hissi
+    border-radius: 30px; // Daha yuvarlak köşeler
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); // Daha belirgin gölge
+    font-family: 'Ubuntu', sans-serif;
+    color: #333; // Daha koyu metin rengi
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  
+   
+  
+    .formHeader, .formFooter {
+      display: flex;
+      justify-content: space-between;
+      gap: 2.5rem;
+      margin-bottom: 1rem;
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1.5rem; // Mobil için boşlukları azalt
+      }
+    }
+  
+    .formControl {
+      width: 100%;
+      padding: 1.4rem; // Daha geniş padding
+      border: 2px solid #f0f0f000; // Hafif çerçeve ekle
+      border-radius: 18px; // Yumuşak köşe yarıçapı
+      background-color: #ffffff67;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  
+      &:focus {
+        border-color: #007bff;
+        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+      }
+    }
+  
+    .formBody {
+      textarea {
+        min-height: 200px; // Daha yüksek metin alanı
+        border-radius: 18px;
+      }
+    }
+  
+    .formFooter {
+      align-items: center;
+      gap:1.2rem;
+  
+      .pointStepper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        button {
+          padding: 0.6rem; // Daha büyük butonlar
+          background-color: #2d2c45;
+          color: #fff; // Beyaz metin
+          border-radius: 50%; // Tam yuvarlak butonlar
+          width: 48px; // Buton boyutunu artır
+          height: 48px;
+          font-size: 1.5rem;
+          margin: 0 1.5rem; // Butonlar arası boşluğu artır
+          box-shadow: 0 3px 6px rgba(0, 123, 255, 0.4);
+  
+          &:hover, &:focus {
+            background-color: lighten(#2d2c45, 7%);
+            box-shadow: 0 5px 10px rgba(2, 42, 84, 0.5);
+          }
+  
+          &:active {
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+          }
+        }
+  
+        input[type="text"] {
+          width: 50px; // Metin kutusunu genişlet
+          font-size: 1.3rem; // Metin boyutunu büyüt
+          background-color: #e7e7e7;
+          font-weight: bold;
+        }
+      }
+    }
+  
+    .submitButton {
+        width: 100%; // Buton genişliği tam konteyner genişliği
+        padding: 1rem 2rem; // Yeterli iç boşluk
+        font-size: 1rem; // Standart metin boyutu
+        background-color: #2d2c45; // Görseldeki gibi koyu gri renk
+        border-radius: 30px; // Yuvarlatılmış köşeler
+        color: #fff; // Beyaz metin
+        transition: background-color 0.3s ease-in-out;
+        cursor: pointer; // Tıklanabilir olduğunu gösterir
+        justify-content: center; // Yatay olarak ortalar
+        gap: 8px; // Metin ve simge arasında boşluk
+      
+        &:hover {
+          background-color: #495057; // Hover durumunda biraz daha açık gri
+        }
+      }
+      
+      
+  }
+  
+  .successMessage {
+    position: fixed; // Fixed position
+    top: 20px; // Distance from top
+    background-color: #28a745; // Background color
+    color: white; // Text color
+    padding: 10px 20px; // Padding
+    border-radius: 5px; // Rounded corners
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Shadow for depth
+    z-index: 1000; // Ensure it's above other elements
+    opacity: 0;
+    animation: fadeInOut 2s; // Animation (fade in and out)
+}
