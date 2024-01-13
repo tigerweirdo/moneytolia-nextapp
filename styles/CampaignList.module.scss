@@ -1,0 +1,100 @@
+.campaignList {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    .successMessage {
+        color: #4caf50;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-weight: bold;
+    }
+
+    .searchInput {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        outline: none;
+        font-size: 1rem;
+
+        &:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+        }
+    }
+
+    .listContainer {
+        .campaignItem {
+            background-color: #f9f9f9;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            position: relative; // Pozisyon referansını belirleyin
+
+
+            &:hover {
+                background-color: #ffffff;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            h3 {
+                color: #333;
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .campaignActions {
+                display: flex;
+                justify-content: flex-start;
+                gap: 1rem;
+                position: absolute; // Absolut pozisyonlama kullan
+                top: 2rem; // Üstten boşluk
+                right: 1rem; 
+
+                button {
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 5px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background-color 0.2s, box-shadow 0.2s;
+                    text-align: center;
+
+                    &:first-child {
+                        background-color: #f44336;
+                        color: white;
+                    }
+
+                    &:last-child {
+                        background-color: #4caf50;
+                        color: white;
+                    }
+
+                    &:hover {
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .searchInput,
+        .campaignItem {
+            padding: 0.5rem;
+        }
+
+        .campaignActions button {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.9rem;
+        }
+    }
+}
