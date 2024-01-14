@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/CampaignForm.module.scss';
 
 const CampaignForm = ({ onSubmit }) => {
@@ -10,13 +10,6 @@ const CampaignForm = ({ onSubmit }) => {
         budget: 0,
         points: 0,
     });
-
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-
-    useEffect(() => {
-        console.log('showSuccessMessage changed:', showSuccessMessage);
-    }, [showSuccessMessage]);
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -33,7 +26,6 @@ const CampaignForm = ({ onSubmit }) => {
         }));
     };
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!campaign.name || !campaign.description) {
@@ -42,8 +34,6 @@ const CampaignForm = ({ onSubmit }) => {
         }
 
         onSubmit(campaign);
-        setShowSuccessMessage(true);
-        setTimeout(() => setShowSuccessMessage(false), 2000);
 
         setCampaign({
             name: '',
@@ -108,13 +98,13 @@ const CampaignForm = ({ onSubmit }) => {
                     <button type="button" onClick={() => handlePointChange(1)}>+</button>
                 </div>
                 <input
-  type="text" // Sayısal değerleri işlemek için JavaScript kullanılabilir
-  name="budget"
-  placeholder="Bütçe"
-  value={campaign.budget === 0 ? '' : campaign.budget}
-  onChange={handleChange}
-  className={styles.formControl}
-/>
+                    type="text"
+                    name="budget"
+                    placeholder="Bütçe"
+                    value={campaign.budget === 0 ? '' : campaign.budget}
+                    onChange={handleChange}
+                    className={styles.formControl}
+                />
             </div>
 
             <button type="submit" className={styles.submitButton}>Kampanya Yarat</button>
