@@ -1,13 +1,15 @@
 .campaignForm {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 3rem;
-  background: #f9f9f9fc;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  color: #2c2c44;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: #f9f9f9fc;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    color: #2c2c44; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: sticky;
+  
+  
   .formHeader, .formFooter {
       display: flex;
       justify-content: space-between;
@@ -21,13 +23,13 @@
   }
 
   .formControl {
-      width: 100%;
-      padding: 1.4rem;
-      border: 2px solid transparent;
-      border-radius: 20px;
-      background-color: #ffffff67;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 1.4rem;
+    border: 2px solid #f0f0f000;
+    border-radius: 18px;
+    background-color: #ffffff67;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
 
       &:focus {
           border-color: #007bffc6;
