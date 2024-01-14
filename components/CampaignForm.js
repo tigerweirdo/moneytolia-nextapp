@@ -86,7 +86,7 @@ const CampaignForm = ({ onSubmit }) => {
                     className={styles.formControl}
                 />
                 <div className={styles.pointStepper}>
-                    <label htmlFor="points">Puan</label>
+                    <label htmlFor="points"></label>
                     <button type="button" onClick={() => handlePointChange(-1)}>-</button>
                     <input
                         type="text"
