@@ -19,7 +19,7 @@ const CampaignList = () => {
     useEffect(() => {
         if (localStorage.getItem('campaignAdded')) {
             setShowSuccessMessage(true);
-            setTimeout(() => setShowSuccessMessage(false), 2000);
+            setTimeout(() => setShowSuccessMessage(false), 3000);
             localStorage.removeItem('campaignAdded');
         }
     }, []);
