@@ -14,7 +14,7 @@
       justify-content: space-between;
       gap: 2.5rem;
       margin-bottom: 1rem;
-
+      margin: 0 1.5rem;
       @media (max-width: 768px) {
           flex-direction: column;
           gap: 1.5rem;
@@ -85,11 +85,12 @@
       width: 100%;
       font-size: 1rem;
       background-color: #2d2c45;
+      margin-top: 30px;
       border-radius: 30px;
       color: #fff;
       transition: background-color 0.3s ease-in-out;
       cursor: pointer;
-
+      padding: 1rem 2rem;
       &:hover {
           background-color: #495057;
       }

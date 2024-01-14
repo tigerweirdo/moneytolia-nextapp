@@ -1,6 +1,6 @@
 .loginForm {
   max-width: 350px;
-  margin:150px auto;
+  margin:130px auto;
   padding: 2rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.46);
   animation: fadeIn 1s ease-in-out;
@@ -10,7 +10,7 @@
 
 
   .legend {
-    background: #2c2c44;
+    background: #f44336;
     color: white;
     padding: 15px;
     text-align: center;
@@ -144,7 +144,7 @@
 
 @media (max-width: 600px) {
   .loginForm {
-    margin: 150px auto;
+    margin: 130px auto;
     padding: 2rem;
   }
 }
