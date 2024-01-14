@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { logout } from './Auth';
 import styles from '../styles/Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'; // 'faSignOut' alternatifi
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'; 
 
 const Header = () => {
   const router = useRouter();
@@ -24,7 +24,7 @@ const Header = () => {
         />
       </div>
       <nav className={styles.navigation}>
-        {/* Buraya navigasyon elemanlarınızı ekleyebilirsiniz */}
+        
       </nav>
       <button className={styles.logoutButton} onClick={handleLogout}>
         <FontAwesomeIcon icon={faRightFromBracket} size="lg" />

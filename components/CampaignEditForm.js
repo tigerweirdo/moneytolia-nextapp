@@ -27,9 +27,9 @@ const CampaignEditForm = ({ campaignData, onSubmit, onClose }) => {
         }));
     };
 
-    // Artık modal kontrolünü kaldırdık
+   
     return (
-        <div className={styles.modalDrawer}> {/* Stil ismi modalDrawer olmasına rağmen, artık modal değil */}
+        <div className={styles.modalDrawer}> 
             <div className={styles.modalContent}>
                 <button onClick={onClose} className={styles.closeButton}>&times;</button>
                 <form onSubmit={handleSubmit} className={styles.campaignForm}>
@@ -38,7 +38,7 @@ const CampaignEditForm = ({ campaignData, onSubmit, onClose }) => {
                             id="name"
                             type="text"
                             name="name"
-                            placeholder="Başlık" // Create formdaki gibi placeholder eklendi
+                            placeholder="Başlık" 
                             value={campaign.name}
                             onChange={handleChange}
                             className={styles.formControl}
@@ -57,7 +57,7 @@ const CampaignEditForm = ({ campaignData, onSubmit, onClose }) => {
                         <textarea
                             id="description"
                             name="description"
-                            placeholder="Açıklama" // Create formdaki gibi placeholder eklendi
+                            placeholder="Açıklama" 
                             value={campaign.description}
                             onChange={handleChange}
                             className={styles.formControl}
@@ -69,7 +69,7 @@ const CampaignEditForm = ({ campaignData, onSubmit, onClose }) => {
                             id="targetAudience"
                             type="text"
                             name="targetAudience"
-                            placeholder="Hedef Kitle" // Create formdaki gibi placeholder eklendi
+                            placeholder="Hedef Kitle" 
                             value={campaign.targetAudience}
                             onChange={handleChange}
                             className={styles.formControl}
@@ -90,7 +90,7 @@ const CampaignEditForm = ({ campaignData, onSubmit, onClose }) => {
                             id="budget"
                             type="number"
                             name="budget"
-                            placeholder="Bütçe" // Placeholder eklendi
+                            placeholder="Bütçe" 
                             value={campaign.budget === 0 ? '' : campaign.budget}
                             onChange={handleChange}
                             className={styles.formControl}
