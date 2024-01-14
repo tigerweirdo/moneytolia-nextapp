@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/CampaignList.module.scss'; 
 import CampaignEditForm from './CampaignEditForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash,faPenToSquare } from '@fortawesome/free-solid-svg-icons'; // 'faSignOut' alternatifi
+import { faTrash,faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 const CampaignList = () => {
