@@ -25,3 +25,8 @@ export function Auth(Component) {
 function checkUserLoggedIn() {
   return localStorage.getItem('userToken') !== null;
 }
+
+export function logout(router) {
+  localStorage.removeItem('userToken');
+  router.push('/login');
+}
