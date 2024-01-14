@@ -29,7 +29,7 @@ const CampaignEditForm = ({ campaignData, onSubmit, onClose }) => {
 
    
     return (
-        <div className={styles.modalDrawer}> 
+        
             <div className={styles.modalContent}>
                 <button onClick={onClose} className={styles.closeButton}>&times;</button>
                 <form onSubmit={handleSubmit} className={styles.campaignForm}>
@@ -99,7 +99,7 @@ const CampaignEditForm = ({ campaignData, onSubmit, onClose }) => {
                     <button type="submit" className={styles.submitButton}>Kampanya Güncelle</button>
                 </form>
             </div>
-        </div>
+        
     );
 };
 
