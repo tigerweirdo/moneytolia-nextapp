@@ -2,8 +2,8 @@
 
 html, body {
   background-image: url('../public/hero-home.png');
-  background-size: cover; /* Görüntüyü kapsayacak şekilde genişletir */
-  background-repeat: no-repeat; /* Görüntünün tekrar etmesini önler */
+  background-size: cover; 
+  background-repeat: no-repeat;
   padding: 0;
   margin: 0;
 
