@@ -10,6 +10,17 @@ const Sidebar = ({ changeComponent }) => {
 
   return (
     <div className={styles.sidebar}>
+      <div className={styles.mobileIcons}> 
+  <div className={styles.iconTextWrapper}onClick={() => handleItemClick('list')}>
+    <FontAwesomeIcon icon={faList} className={styles.mobileIcon}  />
+    <span className={styles.itemText2}>Liste</span>
+  </div>
+  
+  <div className={styles.iconTextWrapper}onClick={() => handleItemClick('create')}>
+    <FontAwesomeIcon icon={faPlus} className={styles.mobileIcon}  />
+    <span className={styles.itemText2}>Yeni</span>
+  </div>
+</div>
       <nav className={styles.myNav}>
         <ul>
           <li className={styles.myHome} onClick={() => handleItemClick('list')}>
