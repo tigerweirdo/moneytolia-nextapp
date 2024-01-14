@@ -4,7 +4,7 @@ import CampaignList from "../../components/CampaignList";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import styles from "../../styles/HomePage.module.scss"; 
-
+import { Auth } from '../../components/Auth';
 const HomePage = () => {
  const [activeComponent, setActiveComponent] = useState("list"); 
  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -52,4 +52,4 @@ const HomePage = () => {
  );
 };
 
-export default HomePage;
+export default Auth(HomePage);
