@@ -7,6 +7,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     color: #2c2c44; 
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: sticky;
   
   
   .formHeader, .formFooter {
@@ -14,7 +15,6 @@
       justify-content: space-between;
       gap: 2.5rem;
       margin-bottom: 1rem;
-      margin: 0 1.5rem;
       @media (max-width: 768px) {
           flex-direction: column;
           gap: 1.5rem;
@@ -24,8 +24,7 @@
   .formControl {
     width: 100%;
     padding: 1.4rem;
-    border: 2px solid #f0f0f000;
-    border-radius: 18px;
+    border: 2px solid transparent;    border-radius: 18px;
     background-color: #ffffff67;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     font-family: Arial, Helvetica, sans-serif;
@@ -34,13 +33,20 @@
           border-color: #007bffc6;
           box-shadow: 0 5px 15px rgba(0, 123, 255, 0.139);
       }
+      input[type="text"] {
+        width: 50px;
+        font-size: 1.3rem;
+        background-color: #e7e7e7;
+        font-weight: bold;
+      }
   }
 
   .formBody {
       textarea {
-          min-height: 200px;
-          font-size: 0.85rem;
+        min-height: 200px;
+        border-radius: 18px;
       }
+      
   }
 
   .formFooter {
