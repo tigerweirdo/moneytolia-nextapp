@@ -3,28 +3,28 @@ import CampaignForm from "../../components/CampaignForm";
 import CampaignList from "../../components/CampaignList";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
-import styles from "../../styles/HomePage.module.scss"; // Özelleştirilmiş CSS/SCSS modülü
+import styles from "../../styles/HomePage.module.scss"; 
 
 const HomePage = () => {
- const [activeComponent, setActiveComponent] = useState("list"); // 'list' or 'create'
+ const [activeComponent, setActiveComponent] = useState("list"); 
  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
  const handleFormSubmit = (campaignData) => {
-    console.log("Form Submitted", campaignData); // Debug log
+    console.log("Form Submitted", campaignData); 
 
     const existingCampaigns = JSON.parse(localStorage.getItem("campaigns")) || [];
     const newCampaign = { ...campaignData, id: Date.now(), points: 0 };
-    console.log("New Campaign", newCampaign); // Debug log
+    console.log("New Campaign", newCampaign); 
 
     const updatedCampaigns = [...existingCampaigns, newCampaign];
     localStorage.setItem("campaigns", JSON.stringify(updatedCampaigns));
 
-    localStorage.setItem("campaignAdded", "true"); // Başarılı gönderim işaretleyici
+    localStorage.setItem("campaignAdded", "true"); 
 
     setShowSuccessMessage(true);
     setTimeout(() => {
       setShowSuccessMessage(false);
-      localStorage.removeItem("campaignAdded"); // Reset the flag after the message is shown
+      localStorage.removeItem("campaignAdded"); 
     }, 2000);
     setActiveComponent("list");
  };
