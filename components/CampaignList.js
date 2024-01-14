@@ -42,11 +42,11 @@ const CampaignList = () => {
         );
         setCampaigns(updatedCampaigns);
         localStorage.setItem('campaigns', JSON.stringify(updatedCampaigns));
-        toggleEditForm(null); // Close the form after update
+        toggleEditForm(null);
     };
 
     const handleDelete = (campaignId) => {
-        if (window.confirm('Are you sure you want to delete this campaign?')) {
+        if (window.confirm('Bu kampanyayı silmek istediğinize emin misiniz?')) {
             const updatedCampaigns = campaigns.filter(c => c.id !== campaignId);
             setCampaigns(updatedCampaigns);
             localStorage.setItem('campaigns', JSON.stringify(updatedCampaigns));
@@ -59,10 +59,10 @@ const CampaignList = () => {
 
     return (
         <div className={styles.campaignList}>
-            {showSuccessMessage && <p className={styles.successMessage}>Campaign successfully added!</p>}
+            {showSuccessMessage && <p className={styles.successMessage}>Kampanya eklendi!</p>}
             <input
                 type="text"
-                placeholder="Search campaigns"
+                placeholder="Ara"
                 value={searchTerm}
                 onChange={handleSearchChange}
                 className={styles.searchInput}
@@ -72,7 +72,7 @@ const CampaignList = () => {
                     <div key={campaign.id} className={styles.campaignItem}>
                         <h3>{campaign.name}</h3>
                         <div className={styles.campaignActions}>
-                            <button onClick={() => handleDelete(campaign.id)}> <FontAwesomeIcon icon={faTrash} size="lg" /> </button>
+                            <button onClick={() => handleDelete(campaign.id)}> <FontAwesomeIcon icon={faTrash} /> </button>
                             <button onClick={() => toggleEditForm(campaign.id)}><FontAwesomeIcon icon={faPenToSquare} /> </button>
                         </div>
                         {expandedCampaignId === campaign.id && (
