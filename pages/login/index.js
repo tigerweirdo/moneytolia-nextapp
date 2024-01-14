@@ -19,7 +19,7 @@ export default function Login() {
   // Oturum kontrolü
   useEffect(() => {
     if (checkUserLoggedIn()) {
-      router.push('/home');
+      router.push('/');
     }
   }, [router]);
 
@@ -43,7 +43,7 @@ export default function Login() {
         if (response.ok) {
           localStorage.setItem('userToken', data.token); // Giriş başarılıysa token'ı saklayın
           setLoginStatus('success');
-          setTimeout(() => router.push('/home'), 2000);
+          setTimeout(() => router.push('/'), 2000);
         } else {
           setLoginStatus('fail');
           setErrorMessage(data.message || 'Giriş başarısız');

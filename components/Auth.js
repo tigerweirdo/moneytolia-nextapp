@@ -4,13 +4,13 @@ import { useRouter } from 'next/router';
 export function Auth(Component) {
   return function AuthenticatedComponent(props) {
     const router = useRouter();
-    const [isLoading, setLoading] = useState(true); // Yüklenme durumu eklendi
+    const [isLoading, setLoading] = useState(true); 
 
     useEffect(() => {
       if (!checkUserLoggedIn()) {
         router.push('/login');
       } else {
-        setLoading(false); // Kullanıcı giriş yapmışsa yüklenme durumunu kapat
+        setLoading(false); 
       }
     }, [router]);
 
