@@ -48,7 +48,10 @@ Açık kaynak topluluğuna katkıda bulunmak her zaman takdir edilir. Yapacağı
 4. Dalınızı Push Edin (`git push origin feature/AmazingFeature`)
 5. Bir Pull Request Açın
 
-na bakın.
+
+## Kullanıcı giriş bilgileri
+Kullanıcı Adı: admin
+Şifre: password
 
 ## İletişim
 Proje Bağlantısı: [https://github.com/tigerweirdo/moneytolia-nextapp](https://github.com/tigerweirdo/moneytolia-nextapp)
