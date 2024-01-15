@@ -33,9 +33,6 @@ Yerel bir kopyayı çalıştırmak için aşağıdaki basit adımları izleyin.
    ```
 4. Uygulamayı tarayıcınızda `http://localhost:3000` adresinde görüntüleyin.
 
-## Kullanım
-Uygulamayı başlattıktan sonra, finansal işlemlerinizi ekleyebilir, düzenleyebilir ve görüntüleyebilirsiniz.
-
 ## Canlı Sürüm
 Uygulamanın canlı sürümüne bu adresten ulaşabilirsiniz: [Moneytolia NextApp](https://moneytolia-nextapp.vercel.app/)
 
