@@ -1,40 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Moneytolia NextApp
 
-First, run the development server:
+## Giriş
+Moneytolia NextApp, Next.js ve React kullanılarak oluşturulmuş bir kampanya yönetimi uygulamasıdır. Kullanıcı dostu bu uygulama, kampanya verilerini kolay ve etkili bir şekilde yönetmek için tasarlanmıştır.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Özellikler
+- **Kullanıcı Kimlik Doğrulama**: Güvenli giriş ve kullanıcı yönetimi.
+- **Kampanya Takip**: Gelir ve giderlerin kolayca takibi.
+- **Etkileşimli Kontrol Paneli**: Kampanya verilerinin görselleştirilmesi.
+- **Responsive Tasarım**: Tüm cihazlarda sorunsuz bir deneyim sağlayacak şekilde tamamen responsive.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Başlarken
+Yerel bir kopyayı çalıştırmak için aşağıdaki basit adımları izleyin.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Ön Koşullar
+- Node.js (v12.0 veya daha yüksek)
+- npm (v6.0 veya daha yüksek)
+- Git
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Kurulum
+1. Depoyu klonlayın:
+   ```bash
+   git clone https://github.com/tigerweirdo/moneytolia-nextapp.git
+   ```
+2. NPM paketlerini yükleyin:
+   ```bash
+   npm install
+   ```
+3. Geliştirme sunucusunu başlatın:
+   ```bash
+   npm run dev
+   ```
+4. Uygulamayı tarayıcınızda `http://localhost:3000` adresinde görüntüleyin.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Kullanım
+Uygulamayı başlattıktan sonra, finansal işlemlerinizi ekleyebilir, düzenleyebilir ve görüntüleyebilirsiniz.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Canlı Sürüm
+Uygulamanın canlı sürümüne bu adresten ulaşabilirsiniz: [Moneytolia NextApp](https://moneytolia-nextapp.vercel.app/)
 
-## Learn More
+## Katkıda Bulunma
+Açık kaynak topluluğuna katkıda bulunmak her zaman takdir edilir. Yapacağınız her türlü katkı **büyük takdir toplar**.
 
-To learn more about Next.js, take a look at the following resources:
+1. Projeyi Forklayın
+2. Özelliğinizi Dalınızda Oluşturun (`git checkout -b feature/AmazingFeature`)
+3. Değişikliklerinizi Commit Edin (`git commit -m 'Add some AmazingFeature'`)
+4. Dalınızı Push Edin (`git push origin feature/AmazingFeature`)
+5. Bir Pull Request Açın
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+na bakın.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## İletişim
+Proje Bağlantısı: [https://github.com/tigerweirdo/moneytolia-nextapp](https://github.com/tigerweirdo/moneytolia-nextapp)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Teşekkürler
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Node.js](https://nodejs.org/)
+- Ve bu projede kullanılan diğer tüm kütüphane ve çerçeveler.
