@@ -6,15 +6,15 @@ Moneytolia NextApp, Next.js ve React kullanılarak oluşturulmuş bir kampanya y
 
 ## Özellikler
 - **Kullanıcı Kimlik Doğrulama**: Güvenli giriş ve kullanıcı yönetimi.
-- **Kampanya Takip**: Gelir ve giderlerin kolayca takibi.
-- **Etkileşimli Kontrol Paneli**: Kampanya verilerinin görselleştirilmesi.
+- **Kampanya Takip**: Kampanyaların düzenlenmesi ve listelenmesi.
+- **Etkileşimli Kontrol Paneli**: Kampanya verilerinin yönetimi.
 - **Responsive Tasarım**: Tüm cihazlarda sorunsuz bir deneyim sağlayacak şekilde tamamen responsive.
 
 ## Başlarken
 Yerel bir kopyayı çalıştırmak için aşağıdaki basit adımları izleyin.
 
 ### Ön Koşullar
-- Node.js (v12.0 veya daha yüksek)
+- Node.js (v18.0 veya daha yüksek)
 - npm (v6.0 veya daha yüksek)
 - Git
 
