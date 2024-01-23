@@ -16,7 +16,7 @@ export default function Login() {
   const [loginStatus, setLoginStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
-  // Oturum kontrolü
+
   useEffect(() => {
     if (checkUserLoggedIn()) {
       router.push('/');
@@ -41,7 +41,7 @@ export default function Login() {
 
         const data = await response.json();
         if (response.ok) {
-          localStorage.setItem('userToken', data.token); // Giriş başarılıysa token'ı saklayın
+          localStorage.setItem('userToken', data.token); 
           setLoginStatus('success');
           setTimeout(() => router.push('/'), 2000);
         } else {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/CampaignList.module.scss'; 
-import CampaignEditForm from './CampaignEditForm';
+import CampaignForm from './CampaignForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash,faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
@@ -76,7 +76,7 @@ const CampaignList = () => {
                             <button onClick={() => toggleEditForm(campaign.id)}><FontAwesomeIcon icon={faPenToSquare} /> </button>
                         </div>
                         {expandedCampaignId === campaign.id && (
-                            <CampaignEditForm 
+                            <CampaignForm 
                                 campaignData={campaign} 
                                 onSubmit={handleUpdate}
                                 onClose={() => toggleEditForm(null)}

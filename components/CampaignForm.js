@@ -29,21 +29,11 @@ const CampaignForm = ({ onSubmit }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!campaign.name || !campaign.description) {
-            alert('Name and description are required.');
+            alert('Lütfen isim ve açıklama yazınız.');
             return;
         }
 
         onSubmit(campaign);
-
-        setCampaign({
-            name: '',
-            description: '',
-            startDate: new Date().toISOString().split('T')[0],
-            endDate: '',
-            targetAudience: '',
-            budget: 0,
-            points: 0,
-        });
     };
 
     return (
