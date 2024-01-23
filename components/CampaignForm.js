@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/CampaignForm.module.scss';
 
-const CampaignForm = ({ onSubmit }) => {
+const CampaignForm = ({ campaignData,onSubmit }) => {
     const [campaign, setCampaign] = useState({
         name: '',
         description: '',
@@ -10,6 +10,10 @@ const CampaignForm = ({ onSubmit }) => {
         budget: 0,
         points: 0,
     });
+
+    useEffect(() => {
+        setCampaign(campaignData);
+    }, [campaignData]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
