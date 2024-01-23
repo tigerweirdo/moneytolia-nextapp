@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/CampaignForm.module.scss';
 
-const CampaignForm = ({ campaignData,onSubmit }) => {
-    const [campaign, setCampaign] = useState({
-        name: '',
-        description: '',
-        startDate: new Date().toISOString().split('T')[0],
-        targetAudience: '',
-        budget: 0,
-        points: 0,
-    });
+const defaultCampaign = {
+    name: '',
+    description: '',
+    startDate: new Date().toISOString().split('T')[0],
+    targetAudience: '',
+    budget: 0,
+    points: 0,
+};
+
+const CampaignForm = ({ campaignData, onSubmit }) => {
+    const [campaign, setCampaign] = useState(defaultCampaign);
 
     useEffect(() => {
-        setCampaign(campaignData);
+        if (campaignData && typeof campaignData === 'object') {
+            setCampaign({
+                ...defaultCampaign,
+                ...campaignData
+            });
+        }
     }, [campaignData]);
 
     const handleChange = (e) => {
@@ -101,7 +108,10 @@ const CampaignForm = ({ campaignData,onSubmit }) => {
                 />
             </div>
 
-            <button type="submit" className={styles.submitButton}>Kampanya Yarat</button>
+            <button type="submit" className={styles.submitButton}>
+    {campaignData && campaignData.id ? 'Kampanya Güncelle' : 'Kampanya Yarat'}
+</button>
+
         </form>
     );
 };
