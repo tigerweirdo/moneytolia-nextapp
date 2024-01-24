@@ -16,13 +16,6 @@ export default function Login() {
   const [loginStatus, setLoginStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
-
-  useEffect(() => {
-    if (checkUserLoggedIn()) {
-      router.push('/');
-    }
-  }, [router]);
-
   const formik = useFormik({
     initialValues: {
       username: '',

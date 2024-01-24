@@ -7,7 +7,6 @@ import styles from "../styles/HomePage.module.scss";
 import { Auth } from '../components/Auth';
 const HomePage = () => {
  const [activeComponent, setActiveComponent] = useState("list"); 
- const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
  const handleFormSubmit = (campaignData) => {
     console.log("Form Submitted", campaignData); 
@@ -21,9 +20,8 @@ const HomePage = () => {
 
     localStorage.setItem("campaignAdded", "true"); 
 
-    setShowSuccessMessage(true);
+   
     setTimeout(() => {
-      setShowSuccessMessage(false);
       localStorage.removeItem("campaignAdded"); 
     }, 2000);
     setActiveComponent("list");
