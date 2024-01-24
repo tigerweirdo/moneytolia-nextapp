@@ -103,6 +103,3 @@ export default function Login() {
     </div>
   );
 }
-function checkUserLoggedIn() {
-  return localStorage.getItem('userToken') !== null;
-}
